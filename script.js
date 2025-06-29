@@ -26,10 +26,9 @@ function pointerDrag(e) {
     console.log(e);
     pos3 = e.clientX;
     pos4 = e.clientY;
+	document.onpointermove = elementDrag;
+	document.onpointerup = stopElementDrag;
 }
-
-document.onpointermove = elementDrag;
-document.onpointerup = stopElementDrag;
 
 function elementDrag(e) {
     pos1 = pos3 - e.clientX;
@@ -45,4 +44,3 @@ function stopElementDrag() {
     document.onpointerup = null;
     document.onpointermove = null;
 }
-
